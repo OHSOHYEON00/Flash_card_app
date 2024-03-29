@@ -1,12 +1,17 @@
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const commonConfig = require('../webpack.config.js');
+const commonConfig = require('./webpack.config.js');
 
 const devConfig = merge(commonConfig, {
   mode: 'production',
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
