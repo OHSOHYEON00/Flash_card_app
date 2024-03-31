@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./dist/*.html'],
+  content: ['./src/**/*.{ts,tsx,html}'],
   theme: {
     extend: {
       colors: {
@@ -9,6 +9,9 @@ module.exports = {
         'button-text': '#8C8E93',
       },
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [],
 };
