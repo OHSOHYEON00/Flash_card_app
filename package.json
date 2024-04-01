@@ -1,5 +1,5 @@
 {
-  "name": "Flash-card-app",
+  "name": "next-skeleton",
   "version": "1.0.0",
   "description": "",
   "main": "index.tsx",
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "autoprefixer": "^10.4.19",
     "next": "^14.1.4",
