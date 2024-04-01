@@ -1,10 +1,14 @@
+'use client';
+
 import React from 'react';
+import SubHeader from '../../components/SubHeader';
+import Project from './sProject';
 
 function Projects() {
   return (
     <section className="PROJECTS">
-      <h3>PROJECTS</h3>
-      <div>Explanation</div>
+      <SubHeader>PROJECTS</SubHeader>
+      <Project />
     </section>
   );
 }

@@ -1,10 +1,14 @@
+'use client';
+
 import React from 'react';
+import SubHeader from '../../components/SubHeader';
+import Experience from './sExperience';
 
 function WorkExperience() {
   return (
     <section className="WORKEXPERIENCE">
-      <h3>WORK EXPERIENCE</h3>
-      <div>Explanation</div>
+      <SubHeader>WORK EXPERIENCE</SubHeader>
+      <Experience />
     </section>
   );
 }

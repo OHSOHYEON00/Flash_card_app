@@ -6,10 +6,10 @@ import Projects from './Projects/Projects';
 
 function Main() {
   return (
-    <section>
-      <section className="header">
+    <section className="flex flex-col h-full">
+      <section className="header flex flex-row flex-[2]">
         <div>
-          <h2>Sohyeon Oh</h2>
+          <div>Sohyeon Oh</div>
           <div>Shorter explanation</div>
         </div>
         <div>
@@ -17,15 +17,17 @@ function Main() {
         </div>
       </section>
 
-      <section className="links">
+      <section className="links flex-1">
         <Links />
       </section>
 
-      <About />
+      <section className="flex-[4]">
+        <About />
 
-      <WorkExperience />
+        <WorkExperience />
 
-      <Projects />
+        <Projects />
+      </section>
     </section>
   );
 }
