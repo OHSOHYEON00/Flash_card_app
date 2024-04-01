@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* 스크롤바의 폭 너비 */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -13,8 +13,8 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #2e3239; /*스크롤바 뒷 배경 색상*/
-}
+  background: #2e3239;
+}  /*스크롤바 뒷 배경 색상*/
 
 body {
   /* IE */
