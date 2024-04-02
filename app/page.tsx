@@ -2,6 +2,7 @@ import React from 'react';
 import Links from './components/Links';
 import Main from './Main/page';
 import { headerFont } from './layout';
+import Rope from './components/Rope';
 
 function Greeting() {
   return (
@@ -19,6 +20,7 @@ function Greeting() {
             technological boundaries and fostering an environment of continuous
             improvement and collective achievement.
           </div>
+          <Rope />
         </section>
 
         <Links />
