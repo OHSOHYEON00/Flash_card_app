@@ -6,8 +6,10 @@ import Rope from './components/Rope';
 
 function Greeting() {
   return (
-    <div className="h-full">
-      <section className="h-full text-center flex flex-col justify-center items-center">
+    <>
+      <Rope />
+
+      <section className="h-full absolute text-center flex flex-col justify-center items-center top-0">
         <section className="">
           <div className={`text-5xl ${headerFont.className}`}>
             Hey, I'm Sohyeon Oh
@@ -20,14 +22,13 @@ function Greeting() {
             technological boundaries and fostering an environment of continuous
             improvement and collective achievement.
           </div>
-          <Rope />
         </section>
 
         <Links />
       </section>
 
       <Main />
-    </div>
+    </>
   );
 }
 

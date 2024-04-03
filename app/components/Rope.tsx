@@ -32,20 +32,24 @@ function Rope() {
   };
 
   return (
-    <div className="absolute top-[-200px]  right-[-100px]">
+    <div className="sticky top-[-200px] right-[-100px] pl-[40rem]">
       <Image
         src={RopeImg}
         alt="pull it down"
-        className="h-[500px] relative right-[-30%]"
+        className="max-h-[500px] relative w-full"
         draggable={false}
         onMouseDown={onClick}
         onMouseUp={onClickEnd}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       />
-      {!isHandling && (
-        <span className="relative right-[-20%] -top-20">Pull it!</span>
-      )}
+
+      <span
+        className={`relative top-[-5rem] text-center pl-16 block ${
+          isHandling ? 'opacity-0' : 'opacity-100'
+        }`}>
+        Pull it!
+      </span>
     </div>
   );
 }
