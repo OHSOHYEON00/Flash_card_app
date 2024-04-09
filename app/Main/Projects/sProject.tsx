@@ -8,6 +8,7 @@ interface TProject {
   desc?: string;
   img?: string;
   contents: string[];
+  id: string;
 }
 
 const createDate = (date: string) => new Date(date);
@@ -24,6 +25,7 @@ const temp: TProject[] = [
       'Crafted a Virtual Infinite Scroll component, boosting UX through smooth, endless content flow.',
       'Guided junior developers and managed taste with the PM as Frontend Project Lead for 3- months, streamlining team workflow and fast-tracking their adjustment.',
     ],
+    id: '1',
   },
   {
     title: 'IndoorMap Editor: Web-based Tool',
@@ -36,6 +38,7 @@ const temp: TProject[] = [
       'Pre-designed canvas control class and UI component interactions, ending development 2 weeks ahead of schedule, a 15% time reduction.',
       'Collaborated closely with senior developers in code reviews, leading to a marked improvement in project efficiency and adherence to best coding practices.',
     ],
+    id: '2',
   },
   {
     title: 'National Museum of Korea, BackOffice',
@@ -48,14 +51,15 @@ const temp: TProject[] = [
       'Developed reusable React UI components, accelerating the development schedule by 20% through increased efficiency in building duplicate pages (tables, form).',
       'Collaborated with UX and Backend teams to identify and resolve issues, significantly reducing miscommunications by effectively documenting action points in JIRA tickets.',
     ],
+    id: '3',
   },
 ];
 
 const Contents = ({ contents }: { contents: string[] }) => {
   return (
     <ul className="list-inside list-disc">
-      {contents.map(content => (
-        <li>{content}</li>
+      {contents.map((content, idx) => (
+        <li key={idx}>{content}</li>
       ))}
     </ul>
   );
@@ -65,7 +69,7 @@ function Project() {
   return (
     <>
       {temp.map(project => (
-        <div className="mt-8 mb-8">
+        <div className="mt-8 mb-8" key={project.id}>
           <section>
             <div>
               <div className="title-project">{project.title}</div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Links from './components/Links';
+import Main from './Main/page';
 
 function Greeting() {
   return (
@@ -17,6 +18,8 @@ function Greeting() {
 
         <Links />
       </section>
+
+      <Main />
     </div>
   );
 }
