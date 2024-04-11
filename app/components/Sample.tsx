@@ -16,28 +16,30 @@ const CHAIN_COL_NUM = 10;
 function Comp() {
   const scene = useRef<any>();
   const engine = useRef(Engine.create());
+  let render = useRef<Render>();
 
   let mouseConstraintRef = useRef<MouseConstraint | null>(null);
 
   useEffect(() => {
     // Create Engine and Render
-    let render = Render.create({
+    render.current = Render.create({
       element: scene.current,
       engine: engine.current,
       options: {
-        width: 800,
-        height: 1000,
+        width: scene.current.offsetWidth - 1,
+        height: scene.current.offsetHeight - 1,
         wireframes: false,
         showMousePosition: true,
         showCollisions: true,
+        background: 'white',
       },
     });
 
-    const mouse = Mouse.create(render.canvas);
+    const mouse = Mouse.create(render.current.canvas);
     mouseConstraintRef.current = MouseConstraint.create(engine.current, {
       mouse: mouse,
       constraint: {
-        stiffness: 0.01,
+        stiffness: 0.2,
         render: {
           visible: false,
         },
@@ -59,7 +61,7 @@ function Comp() {
             render: {
               fillStyle: '#FFFFFF00',
               strokeStyle: 'brown',
-              lineWidth: 10,
+              lineWidth: 15,
             },
           });
         }
@@ -75,9 +77,13 @@ function Comp() {
     );
 
     Composites.chain(rope, 0.5, 0, -0.5, 0, {
-      stiffness: 0.5,
+      stiffness: 0.2,
       length: 1,
-      render: { type: 'line', anchors: false },
+      render: {
+        type: 'line',
+        strokeStyle: 'brown',
+        lineWidth: 20,
+      },
     });
 
     // Fix end of chain
@@ -89,14 +95,14 @@ function Comp() {
           x: rope.bodies[0].position.x,
           y: rope.bodies[0].position.y,
         },
-        stiffness: 0.5,
+        stiffness: 0.2,
         render: {
           visible: false,
         },
       }),
     ]);
 
-    render.mouse = mouse;
+    render.current.mouse = mouse;
     World.add(engine.current.world, mouseConstraintRef.current);
 
     // Add chain to World
@@ -106,30 +112,39 @@ function Comp() {
     Engine.run(engine.current);
 
     // Execute Render
-    Render.run(render);
+    Render.run(render.current);
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      Render.stop(render);
-      Matter.World.clear(engine.current.world, true);
-      Matter.Engine.clear(engine.current);
-      render.canvas.remove();
-      render.canvas = null as any;
-      render.context = null as any;
-      render.mouse = null as any;
+      if (render.current) {
+        Render.stop(render.current);
+        Matter.World.clear(engine.current.world, true);
+        Matter.Engine.clear(engine.current);
+        render.current.canvas.remove();
+        render.current.canvas = null as any;
+        render.current.context = null as any;
+        render.current.mouse = null as any;
+      }
     };
   }, []);
 
+  function handleResize(e: any) {
+    if (render.current) {
+      render.current.canvas.width = scene.current.offsetWidth;
+      render.current.canvas.height = scene.current.offsetHeightå;
+    }
+  }
+
   return (
-    <div>
-      <div
-        ref={scene}
-        style={{ width: '100%', height: '100%' }}
-        onMouseLeave={e => {
-          const ev = new Event('mouseup');
-          mouseConstraintRef.current?.mouse.element.dispatchEvent(ev);
-        }}
-      />
-    </div>
+    <div
+      ref={scene}
+      style={{ width: '100%', height: '100%' }}
+      onMouseLeave={e => {
+        const ev = new Event('mouseup');
+        mouseConstraintRef.current?.mouse.element.dispatchEvent(ev);
+      }}
+    />
   );
 }
 

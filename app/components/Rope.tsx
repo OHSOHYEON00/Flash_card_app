@@ -33,7 +33,7 @@ function Rope() {
   };
 
   return (
-    <div className="sticky top-[-200px] right-[-100px] pl-[40rem]">
+    <div className="sticky h-screen">
       {/* <Image
         src={RopeImg}
         alt="pull it down"
