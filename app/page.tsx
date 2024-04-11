@@ -2,11 +2,23 @@ import React from 'react';
 import Links from './components/Links';
 import Main from './Main/page';
 import { headerFont } from './layout';
+import Rope from './components/Rope';
 
 function Greeting() {
   return (
-    <div className="h-full">
-      <section className="h-full text-center flex flex-col justify-center items-center">
+    <>
+      <Rope />
+      {/* <Image
+        src={RopeImg}
+        alt={'rope'}
+        width={800}
+        height={800}
+        id="matter-path"
+        priority
+      /> */}
+      {/* <RopeImg /> */}
+      {/* 
+      <section className="h-full absolute text-center flex flex-col justify-center items-center top-0">
         <section className="">
           <div className={`text-5xl ${headerFont.className}`}>
             Hey, I'm Sohyeon Oh
@@ -24,8 +36,8 @@ function Greeting() {
         <Links />
       </section>
 
-      <Main />
-    </div>
+      <Main /> */}
+    </>
   );
 }
 
