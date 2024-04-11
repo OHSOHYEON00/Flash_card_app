@@ -8,7 +8,16 @@ function Greeting() {
   return (
     <>
       <Rope />
-
+      {/* <Image
+        src={RopeImg}
+        alt={'rope'}
+        width={800}
+        height={800}
+        id="matter-path"
+        priority
+      /> */}
+      {/* <RopeImg /> */}
+      {/* 
       <section className="h-full absolute text-center flex flex-col justify-center items-center top-0">
         <section className="">
           <div className={`text-5xl ${headerFont.className}`}>
@@ -27,7 +36,7 @@ function Greeting() {
         <Links />
       </section>
 
-      <Main />
+      <Main /> */}
     </>
   );
 }

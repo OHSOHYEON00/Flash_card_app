@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import RopeImg from '../../public/rope.svg';
+import Comp from './Sample';
 
 function Rope() {
   const [isHandling, setIsHandling] = useState<boolean>(false);
@@ -33,7 +34,7 @@ function Rope() {
 
   return (
     <div className="sticky top-[-200px] right-[-100px] pl-[40rem]">
-      <Image
+      {/* <Image
         src={RopeImg}
         alt="pull it down"
         className="max-h-[500px] relative w-full"
@@ -49,7 +50,8 @@ function Rope() {
           isHandling ? 'opacity-0' : 'opacity-100'
         }`}>
         Pull it!
-      </span>
+      </span> */}
+      <Comp />
     </div>
   );
 }
