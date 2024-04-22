@@ -1,5 +1,4 @@
 import React from 'react';
-import Links from './components/Links';
 
 function Greeting() {
   return (
@@ -14,9 +13,8 @@ function Greeting() {
             improvement and collective achievement.
           </div>
         </section>
-
-        <Links />
       </section>
+    </div>
   );
 }
 
