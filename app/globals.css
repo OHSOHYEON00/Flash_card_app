@@ -26,13 +26,3 @@ body {
   scrollbar-color: black white; /* 검은색 Thumb 와 흰색 Track */
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
