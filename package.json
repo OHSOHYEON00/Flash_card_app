@@ -14,6 +14,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
+    "@next/font": "^14.1.4",
     "autoprefixer": "^10.4.19",
     "next": "^14.1.4",
     "react": "^18.2.0",
