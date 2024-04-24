@@ -9,14 +9,14 @@ export const headerFont = localFont({
   display: 'swap',
 });
 
-const basicFont = Raleway({
+export const latinFont = Raleway({
   subsets: ['latin'],
   display: 'swap',
 });
 
 function layout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${basicFont.className}`}>
+    <html className={`${latinFont.className}`}>
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
