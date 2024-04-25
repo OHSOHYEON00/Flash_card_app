@@ -1,18 +1,7 @@
 /** Used to define html and body tag */
 import React from 'react';
 import './globals.css';
-import localFont from 'next/font/local';
-import { Raleway } from 'next/font/google';
-
-export const headerFont = localFont({
-  src: '../public/SieraLeone.woff',
-  display: 'swap',
-});
-
-export const latinFont = Raleway({
-  subsets: ['latin'],
-  display: 'swap',
-});
+import { latinFont } from './utils/utils';
 
 function layout({ children }: { children: React.ReactNode }) {
   return (

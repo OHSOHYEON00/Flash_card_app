@@ -1,10 +1,9 @@
 import React from 'react';
 import Toolbar from 'app/components/Toolbar';
 import Header from 'app/components/ui/Header';
-import { headerFont } from './layout';
 import Image from 'next/image';
 import Tag from './components/ui/Tag';
-import { techStacks } from './utils/utils';
+import { headerFont, techStacks } from './utils/utils';
 
 function Greeting() {
   return (

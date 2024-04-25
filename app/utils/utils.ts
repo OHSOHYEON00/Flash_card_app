@@ -1,4 +1,16 @@
+import localFont from 'next/font/local';
 import { TagT } from './types';
+import { Raleway } from 'next/font/google';
+
+export const headerFont = localFont({
+  src: '../../public/SieraLeone.woff',
+  display: 'swap',
+});
+
+export const latinFont = Raleway({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const techStacks: Array<{ name: string; type: TagT }> = [
   { name: 'JavaScript', type: 'tech' },
