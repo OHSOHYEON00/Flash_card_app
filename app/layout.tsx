@@ -1,22 +1,11 @@
 /** Used to define html and body tag */
 import React from 'react';
 import './globals.css';
-import localFont from 'next/font/local';
-import { Raleway } from 'next/font/google';
-
-export const headerFont = localFont({
-  src: '../public/SieraLeone.woff',
-  display: 'swap',
-});
-
-const basicFont = Raleway({
-  subsets: ['latin'],
-  display: 'swap',
-});
+import { latinFont } from './utils/utils';
 
 function layout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${basicFont.className}`}>
+    <html className={`${latinFont.className}`}>
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
