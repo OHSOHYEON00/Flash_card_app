@@ -25,13 +25,16 @@ body {
   scrollbar-width: thin;
   scrollbar-color: black white; /* 검은색 Thumb 와 흰색 Track */
 
-  @media screen and (min-width: 769px) {
+  white-space: pre-line;
+  vertical-align: bottom;
+
+  @media screen and (min-width: 1180px) {
     .mobile-progress {
       display: none;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1179px) {
     .desktop-progress {
       display: none;
     }

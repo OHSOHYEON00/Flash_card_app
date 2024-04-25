@@ -21,7 +21,7 @@ function Step({ stage, handleSeleted, index, isSelected }: StepP) {
 
   return (
     <div
-      className={`w-[10vw] h-[10vw] flex justify-center items-center text-center text-[0.75em] rounded-[50%] ${
+      className={`w-[10vw] h-[10vw] flex justify-center items-center text-center text-[0.7em] rounded-[50%] ${
         isSelected && 'shadow-progress'
       } border border-[white] ${optional ? 'border-dotted' : 'border-solid '}`}
       onClick={handleEnter}
@@ -56,7 +56,9 @@ function Process() {
         </div>
         <div className="text-xs mt-4 h-16">{ProgressSteps[selected].info}</div>
       </section>
-      <section className="mobile-progress">hello</section>
+      <section className="mobile-progress">
+        Requirements Analysis, {<br />} Tech Stack Selection, and Project Setup
+      </section>
     </>
   );
 }
