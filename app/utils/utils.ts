@@ -1,5 +1,4 @@
 import localFont from 'next/font/local';
-import { TagT } from './types';
 import { Raleway } from 'next/font/google';
 
 export const headerFont = localFont({
@@ -11,6 +10,7 @@ export const latinFont = Raleway({
   subsets: ['latin'],
   display: 'swap',
 });
+import { ProgressT, TagT } from './types';
 
 export const techStacks: Array<{ name: string; type: TagT }> = [
   { name: 'JavaScript', type: 'tech' },
@@ -32,19 +32,11 @@ export const techStacks: Array<{ name: string; type: TagT }> = [
   { name: 'Confluence', type: 'soft' },
 ];
 
-export const ProgressSteps: Array<{
-  step: string;
-  info?: string;
-  optional?: boolean;
-}> = [
+export const ProgressSteps: Array<ProgressT> = [
   {
-    step: 'Requirement Gathering and Analysis and Tech Stack Selection',
-    info: 'To understand customer requirements and goals, I analyze project requirements and review the project history. \n I collaborated with senior members to estimate the technology stack considering project requirements, scale, and performance.',
+    step: `Requirement Analysis and Tech Stack Selection \n & Project Setup`,
+    info: 'To understand customer requirements and goals, I analyze project requirements and review the project history. \n I collaborated with senior members to estimate the technology stack considering project requirements, scale, and performance. \n Set up the project development environment, including project structure, deployment environment, and version control.',
     optional: true,
-  },
-  {
-    step: 'Project Setup',
-    info: 'Set up the project development environment, including project structure, deployment environment, and version control.',
   },
   {
     step: 'Analysis UX',
@@ -63,16 +55,11 @@ export const ProgressSteps: Array<{
     info: 'Integrated and tested APIs in collaboration with Backend developers, resolving issues such as CORS.',
   },
   {
-    step: 'Post-Deployment Testing and Monitoring',
-    info: '',
-  },
-  {
     step: 'Deployment',
     info: 'Using deployment pipelines, I deployed actual code to the production level while managing code using GitFlow policies, utilizing dev, stage, and production (release) steps.',
   },
   {
     step: 'Operation and Updating',
     info: 'Based on actual user interaction monitoring and feedback from users and stakeholders, I conducted service upgrades to enhance user experience and addressed issues.\n Adding new features and updating existing ones were done through sprints, involving UX analysis, development, integration, testing, and deployment.',
-    optional: true,
   },
 ];

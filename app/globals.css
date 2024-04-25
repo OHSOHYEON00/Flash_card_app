@@ -24,4 +24,16 @@ body {
   /* Firefox */
   scrollbar-width: thin;
   scrollbar-color: black white; /* 검은색 Thumb 와 흰색 Track */
+
+  @media screen and (min-width: 769px) {
+    .mobile-progress {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .desktop-progress {
+      display: none;
+    }
+  }
 }

@@ -1,5 +1,5 @@
-import { latinFont } from 'app/utils/utils';
 import React from 'react';
+import { latinFont } from 'utils/utils';
 
 function Header({
   content = '',
