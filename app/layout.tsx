@@ -1,7 +1,7 @@
 /** Used to define html and body tag */
 import React from 'react';
 import './globals.css';
-import { latinFont } from './utils/utils';
+import { latinFont } from 'utils/utils';
 
 function layout({ children }: { children: React.ReactNode }) {
   return (

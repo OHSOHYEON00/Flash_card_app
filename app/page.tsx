@@ -1,13 +1,14 @@
 import React from 'react';
-import Toolbar from 'app/components/Toolbar';
-import Header from 'app/components/ui/Header';
 import Image from 'next/image';
-import Tag from './components/ui/Tag';
-import { headerFont, techStacks } from './utils/utils';
+import Toolbar from 'components/Toolbar';
+import Header from 'components/ui/Header';
+import Tag from 'components/ui/Tag';
+import Process from 'components/Process';
+import { headerFont, techStacks } from 'utils/utils';
 
 function Greeting() {
   return (
-    <div className=" bg-bg text-white h-full">
+    <div className=" bg-bg text-[#E6E6E6] h-full">
       <Toolbar />
       <section className="px-24 py-16 w-full">
         <article className="flex flex-row">
@@ -90,6 +91,7 @@ function Greeting() {
             아래와 같은 사이클로 업무가 이뤄졌다. (마우스를 올리면 각 스텝별
             디테일을 확인할 수 있어)
           </div>
+          <Process />
         </article>
 
         <article>
